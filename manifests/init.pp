@@ -138,8 +138,8 @@ class jdk_oracle(
       exec { 'get_jdk_installer':
         cwd     => $install_dir,
         creates => "${install_dir}/${installerFilename}",
-        command => "wget -c --no-cookies --no-check-certificate --header \"Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com\" --header \"Cookie: oraclelicense=accept-securebackup-cookie\" \"${javaDownloadURI}\" -O ${installerFilename}",
-        timeout => 600,
+        command => "wget -t 10 -w 60 -c --no-cookies --no-check-certificate --header \"Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com\" --header \"Cookie: oraclelicense=accept-securebackup-cookie\" \"${javaDownloadURI}\" -O ${installerFilename}",
+        timeout => 60000,
         require => Package['wget'],
       }
 
