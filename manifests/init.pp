@@ -50,10 +50,10 @@ class jdk_oracle(
   $ensure         = 'installed'
   ) {
 
-  $default_8_update = '11'
-  $default_8_build  = '12'
-  $default_7_update = '67'
-  $default_7_build  = '01'
+  $default_8_update = '25'
+  $default_8_build  = '17'
+  $default_7_update = '72'
+  $default_7_build  = '14'
   $default_6_update = '45'
   $default_6_build  = '06'
 
@@ -79,7 +79,8 @@ class jdk_oracle(
         } else {
           $version_b = $default_8_build
         }
-        $javaDownloadURI = "http://download.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.tar.gz"
+        #$javaDownloadURI = "http://download.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.tar.gz"
+        $javaDownloadURI = "https://raw.ziguangcn.com/raw/java/jdk/jdk-${version}u${version_u}-b${version_b}-linux-${plat_filename}.tar.gz"
         $java_home = "${install_dir}/jdk1.${version}.0_${version_u}"
       }
       '7': {
@@ -93,7 +94,8 @@ class jdk_oracle(
         } else {
           $version_b = $default_7_build
         }
-        $javaDownloadURI = "http://download.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.tar.gz"
+        #$javaDownloadURI = "http://download.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.tar.gz"
+        $javaDownloadURI = "https://raw.ziguangcn.com/raw/java/jdk/jdk-${version}u${version_u}-b${version_b}-linux-${plat_filename}.tar.gz"
         $java_home = "${install_dir}/jdk1.${version}.0_${version_u}"
       }
       '6': {
@@ -107,7 +109,8 @@ class jdk_oracle(
         } else {
           $version_b = $default_6_build
         }
-        $javaDownloadURI = "https://edelivery.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.bin"
+        #$javaDownloadURI = "https://edelivery.oracle.com/otn-pub/java/jdk/${version}u${version_u}-b${version_b}/jdk-${version}u${version_u}-linux-${plat_filename}.bin"
+        $javaDownloadURI = "https://raw.ziguangcn.com/raw/java/jdk/jdk-${version}u${version_u}-b${version_b}-linux-${plat_filename}.bin"
         $java_home = "${install_dir}/jdk1.${version}.0_${version_u}"
       }
       default: {
